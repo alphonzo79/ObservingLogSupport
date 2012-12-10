@@ -56,7 +56,8 @@ public class NotesShorthandReplace {
 		associations.put("^l(?!ast)", "little/long");
 		associations.put("^last", "last");
 		associations.put("^L", "large");
-		associations.put("^m(?!m|n)", "much");
+		associations.put("^m(?!m|n|any)", "much");
+        associations.put("^many", "many");
 		associations.put("^mm", "mixed magnitudes");
 		associations.put("^mn", "milky nebulosity");
 		associations.put("^M", "middle/in the middle");

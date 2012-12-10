@@ -22,7 +22,7 @@ public class ProcessLineUtils {
 
         output = ConstellationReplace.getAssociation(input);
 
-        if(output.equals("")) {
+        if(output == null || output.equals("")) {
             System.out.println("Constellation Output was found to be empty");
         }
         return output;
@@ -36,7 +36,7 @@ public class ProcessLineUtils {
         first = Character.toUpperCase(first);
         output = first + output.substring(1);
 
-        if(output.equals("")) {
+        if(output == null || output.equals("")) {
             System.out.println("Description Output was found to be empty");
         }
         return output;
@@ -47,7 +47,7 @@ public class ProcessLineUtils {
 
         output = ObjectTypeProcessor.getAssociation(input);
 
-        if(output.equals("")) {
+        if(output == null || output.equals("")) {
             System.out.println("Object Type Output was found to be empty");
         }
         return output;
@@ -72,7 +72,7 @@ public class ProcessLineUtils {
 
         output = DetermineSeason.getAssociation(input);
 
-        if(output.equals("")) {
+        if(output == null || output.equals("")) {
             System.out.println("Season Output was found to be empty");
         }
         return output;
@@ -87,7 +87,7 @@ public class ProcessLineUtils {
 
         output = input.replaceFirst("\\s?X\\s?", " X ");
 
-        if(output.equals("")) {
+        if(output == null || output.equals("")) {
             System.out.println("Size Output was found to be empty");
         }
         return output;

@@ -16,11 +16,11 @@ public class Program {
 //		Program program = new Program();
 //		program.processNGCTextFile();
 
-//        SeleniumIC tool = new SeleniumIC();
-//        tool.doit();
+        SeleniumIC tool = new SeleniumIC();
+        tool.doit();
 
-        Program program = new Program();
-        program.findIc();
+//        Program program = new Program();
+//        program.findIc();
 	}
 	
 	//"C:\\Users\\joe.rowley\\Documents\\ObservingLog\\ObservingLog\\NonCodeResources\\Catalogs\\NGCCatalog\\NGC1.txt"

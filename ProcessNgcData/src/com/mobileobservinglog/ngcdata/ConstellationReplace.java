@@ -1,11 +1,13 @@
 package com.mobileobservinglog.ngcdata;
 
 import java.util.ArrayList;
+import java.util.Set;
 import java.util.TreeMap;
+import java.util.TreeSet;
 
 public class ConstellationReplace {
 	static TreeMap<String, String> associations = new TreeMap<String, String>();
-    static ArrayList<String> knownValues = new ArrayList<String>();
+    static Set<String> knownValues = new TreeSet<String>();
 	
 	static{
 		associations.put("And", "Andromeda");
@@ -17,6 +19,7 @@ public class ConstellationReplace {
 		associations.put("Ari", "Aries");
 		associations.put("Aur", "Auriga");
 		associations.put("Boo", "Bootes");
+        associations.put("Boötes", "Bootes");
 		associations.put("Cae", "Caelum");
 		associations.put("Cam", "Camelopardalis");
 		associations.put("Cnc", "Cancer");
