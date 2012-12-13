@@ -3,13 +3,13 @@
 <Sections>
   <Section Name="ProjectSettings">
     <Setting Name="OptionStrict" Type="Boolean" Desc="Visual Basic allows conversions of many data types to other data types. Data loss can occur when the value of one data type is converted to a data type with less precision or smaller capacity. A run-time error occurs if such a narrowing conversion fails. Option Strict ensures compile-time notification of these narrowing conversions so they can be avoided.">
-      <Value>False</Value>
+      <Value>True</Value>
     </Setting>
     <Setting Name="OptionExplicit" Type="Boolean" Desc="When Option Explicit appears in a file, you must explicitly declare all variables using the Dim or ReDim statements. If you attempt to use an undeclared variable name, an error occurs at compile time.">
       <Value>True</Value>
     </Setting>
     <Setting Name="ShowUI" Type="Boolean" Desc="Shows a DOS console if set to true.">
-      <Value>True</Value>
+      <Value>False</Value>
     </Setting>
     <Setting Name="RuntimeTimeout" Type="Int32" Desc="Set the timer to prevent Slick Test from going into an infinite loop.  Set to 0 for infinite time.">
       <Value>10</Value>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace GenerateStarCharts
 {
@@ -11,6 +12,7 @@ namespace GenerateStarCharts
         private string filename;
         private string outputDirectory;
         private string root = @"C:\Users\joe.rowley\Documents\ObservingLog\ObservingLog\res\values\";
+        //private string root = @"C:\Users\joe.rowley\Desktop\StarChartTest\";
 
         public FileOperations(string filename, string outputDirectory)
         {
@@ -37,17 +39,40 @@ namespace GenerateStarCharts
                 string[] values = line.Split(';');
                 string imageResource = values[14];
                 string[] imageSplit = imageResource.Split('/');
+                if (imageSplit.Length < 4)
+                    continue;
                 string imgRef = imageSplit[3];
                 string[] imageRefSplit = imgRef.Split('.');
                 string objRef = imageRefSplit[0];
                 string ra = values[9];
                 string dec = values[10];
                 string decUnescaped = dec.Replace("\\", "");
-                Console.Out.WriteLine(decUnescaped);
                 objectValues.Add(objRef, new string[]{ra, decUnescaped});
             }
 
             return objectValues;
+        }
+
+        //00h 08m 27.2s
+        public string[] parseRa(string ra)
+        {
+            string[] split = ra.Split(' ');
+            for (int i = 0; i < split.Length; i++)
+            {
+                split[i] = split[i].Substring(0, split[i].Length - 1);
+            }
+            return split;
+        }
+
+        //+27º 43' 08\"
+        public string[] parseDec(string dec)
+        {
+            string[] split = dec.Split(' ');
+            for (int i = 0; i < split.Length; i++)
+            {
+                split[i] = split[i].Substring(0, split[i].Length - 1);
+            }
+            return split;
         }
     }
 }

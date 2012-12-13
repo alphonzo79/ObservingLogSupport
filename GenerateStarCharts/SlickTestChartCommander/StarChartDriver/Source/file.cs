@@ -7,9 +7,9 @@ using System.Threading;
 	{
 		static void Main(string[] args)
 		{
-			new SetPositionDriver(new string[]{"22",  "45", "12"}, new string[]{"23", "43", "01"});
-			Thread.Sleep(1000);
-			new MakePdfDriver("C:\\users\\joe.rowley\\Desktop\\test.pdf");
+			new SetPositionDriver(new string[]{args[0], args[1], args[2]}, new string[]{args[3], args[4], args[5]});
+			Thread.Sleep(2000);
+			new MakePdfDriver(args[6]);
 		}
 	}
 
@@ -39,6 +39,8 @@ public class SetPositionDriver: UIControls.InterAct{
                 System.IO.Path.GetFileNameWithoutExtension(System.Windows.Forms.Application.ExecutablePath) + ".stp", false)
     {
 	//Recorded Code Below
+		Log.StoreLogLocation = Log.LogLocation.ToFile;
+		Log.FileLogLocation = ".\\Log.txt";
 
 		Window(SetPositionDescriptors.MainWindow).WinObject(SetPositionDescriptors.Main_Sub_Window).WinObject(@"name:=""Window"";;value:="""";;index:=""3""").Click(Mouse.AbsToRelativeCoordX(20246,1366),Mouse.AbsToRelativeCoordY(1451,768));
 		Thread.Sleep(500);
@@ -51,10 +53,10 @@ public class SetPositionDriver: UIControls.InterAct{
 		
 		Window(SetPositionDescriptors.Window_Position).WinObject(SetPositionDescriptors.Equatorial_Coords_Frame).TextBox(SetPositionDescriptors.DEC_Field_1).SetText("");
 		Window(SetPositionDescriptors.Window_Position).WinObject(SetPositionDescriptors.Equatorial_Coords_Frame).TextBox(SetPositionDescriptors.DEC_Field_1).AppendText(dec[0]);
-		Window(SetPositionDescriptors.Window_Position).WinObject(SetPositionDescriptors.Equatorial_Coords_Frame).TextBox(SetPositionDescriptors.DEC_Field_1).SetText("");
-		Window(SetPositionDescriptors.Window_Position).WinObject(SetPositionDescriptors.Equatorial_Coords_Frame).TextBox(SetPositionDescriptors.DEC_Field_1).AppendText(dec[1]);
-		Window(SetPositionDescriptors.Window_Position).WinObject(SetPositionDescriptors.Equatorial_Coords_Frame).TextBox(SetPositionDescriptors.DEC_Field_1).SetText("");
-		Window(SetPositionDescriptors.Window_Position).WinObject(SetPositionDescriptors.Equatorial_Coords_Frame).TextBox(SetPositionDescriptors.DEC_Field_1).AppendText(dec[2]);
+		Window(SetPositionDescriptors.Window_Position).WinObject(SetPositionDescriptors.Equatorial_Coords_Frame).TextBox(SetPositionDescriptors.DEC_Field_2).SetText("");
+		Window(SetPositionDescriptors.Window_Position).WinObject(SetPositionDescriptors.Equatorial_Coords_Frame).TextBox(SetPositionDescriptors.DEC_Field_2).AppendText(dec[1]);
+		Window(SetPositionDescriptors.Window_Position).WinObject(SetPositionDescriptors.Equatorial_Coords_Frame).TextBox(SetPositionDescriptors.DEC_Field_3).SetText("");
+		Window(SetPositionDescriptors.Window_Position).WinObject(SetPositionDescriptors.Equatorial_Coords_Frame).TextBox(SetPositionDescriptors.DEC_Field_3).AppendText(dec[2]);
 		Window(SetPositionDescriptors.Window_Position).Button(SetPositionDescriptors.Position_Button_OK).Click(Mouse.AbsToRelativeCoordX(1727,1366),Mouse.AbsToRelativeCoordY(1365,768));
 	}
 }
@@ -86,6 +88,9 @@ public class MakePdfDriver: UIControls.InterAct{
                 System.IO.Path.GetFileNameWithoutExtension(System.Windows.Forms.Application.ExecutablePath) + ".stp", false)
     {
 	//Recorded Code Below
+		Log.StoreLogLocation = Log.LogLocation.ToFile;
+		Log.FileLogLocation = ".\\Log.txt";
+		Log.LogData(DateTime.Now + " - " + filePath);
 
 		Window(MakePdfDescriptors.MainWindow).WinObject(MakePdfDescriptors.Main_Sub_Window).WinObject(@"name:=""Window"";;value:="""";;index:=""3""").Click(Mouse.AbsToRelativeCoordX(3934,1366),Mouse.AbsToRelativeCoordY(1024,768));
 		Thread.Sleep(500);
