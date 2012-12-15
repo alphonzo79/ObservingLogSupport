@@ -26,7 +26,7 @@ namespace GenerateStarCharts
             sb.Append(", ");
             sb.Append(outputPath);
             System.Diagnostics.Process.Start(exeLocation, sb.ToString());
-            Thread.Sleep(15000);
+            Thread.Sleep(20000);
         }
     }
 }
