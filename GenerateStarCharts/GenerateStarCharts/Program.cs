@@ -9,9 +9,9 @@ namespace GenerateStarCharts
 {
     class Program
     {
-        static string dataFile = "ngc_4_catalog_database_values.xml";
+        static string dataFile = "ic_61_catalog_database_values.xml";
         static string outputDirectoryRoot = @"C:\Users\joe.rowley\Documents\ObservingLog\ObservingLog\NonCodeResources\Catalogs\";
-        static string outputRelativePath = @"NGCCatalog\NGCStarCharts\ngc4\NGC4Raw\";
+        static string outputRelativePath = @"ICCatalog\ICStarCharts\ic6\IC6Raw\";
         //static string outputDirectoryRoot = @"C:\Users\joe.rowley\Desktop\";
         //static string outputRelativePath = @"StarChartTest\";
         static void Main(string[] args)
